@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANSEL LIN 林境 — 攝影師個人作品集 | Photographer Portfolio</title>
+  <meta name="description" content="ANSEL LIN 林境 攝影師個人作品集。極簡、現代、編輯式排版，專注於人像攝影、風景攝影、街頭光影與人文生活紀實。">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22serif%22 fill=%22%23f5f2eb%22>A</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              DEFAULT: '#0b0b0c',
+              50: '#1c1c1f',
+              100: '#17171a',
+              200: '#121214',
+              300: '#0b0b0c',
+            },
+            cream: {
+              DEFAULT: '#f5f2eb',
+              light: '#fcfaf6',
+              dark: '#e5dfd3',
+              muted: '#b0aba0',
+            },
+            amberAccent: '#c8b69b'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Noto Serif TC', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['Space Mono', 'Consolas', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Editorial CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0b0b0c] text-[#f5f2eb] antialiased selection:bg-[#f5f2eb] selection:text-[#0b0b0c]">
+
+  <!-- Analog Film Grain Subtle Overlay -->
+  <div class="film-grain"></div>
+
+  <!-- Custom Magnetic Cursor (Desktop) -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-follower">
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header fixed top-0 left-0 w-full z-50 py-6 px-6 md:px-12 transition-all duration-500">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#home" class="group flex flex-col tracking-widest" data-cursor="ANSEL">
+        <span class="font-serif text-xl md:text-2xl tracking-[0.22em] text-[#f5f2eb] font-light uppercase group-hover:text-amber-200/90 transition-colors">
+          ANSEL LIN
+        </span>
+        <span class="font-mono text-[9px] tracking-[0.3em] text-[#8e8a80] uppercase -mt-0.5">
+          Photography · 林境
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="#home" class="nav-link">01 // 首頁</a>
+        <a href="#about" class="nav-link">02 // 關於</a>
+        <a href="#gallery" class="nav-link">03 // 作品</a>
+        <a href="#projects" class="nav-link">04 // 專案</a>
+        <a href="#contact" class="nav-link">05 // 聯絡</a>
+      </nav>
+
+      <!-- Availability Status & Direct Action -->
+      <div class="hidden lg:flex items-center space-x-6">
+        <div class="flex items-center space-x-2 text-[11px] font-mono tracking-wider text-[#b0aba0]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-indicator"></span>
+          <span class="uppercase">Available 2026</span>
+        </div>
+        <a href="#contact" class="px-4 py-2 border border-[#f5f2eb]/20 hover:border-[#f5f2eb] text-[#f5f2eb] text-xs font-mono tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-[#f5f2eb] hover:text-[#0b0b0c]" data-cursor="CONTACT">
+          預約諮詢
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-200 hover:text-white focus:outline-none" aria-label="Toggle Navigation Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Navigation Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0b0b0c]/98 backdrop-blur-2xl flex flex-col justify-between p-8 md:hidden transition-all duration-500 opacity-0 pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto">
+    <div class="pt-24 flex flex-col space-y-6">
+      <span class="font-mono text-xs text-[#8e8a80] tracking-widest uppercase">NAVIGATION INDEX</span>
+      <a href="#home" class="mobile-nav-link font-serif text-3xl text-stone-100 hover:text-amber-200 transition-colors">01 / 首頁 · Home</a>
+      <a href="#about" class="mobile-nav-link font-serif text-3xl text-stone-100 hover:text-amber-200 transition-colors">02 / 關於攝影師 · About</a>
+      <a href="#gallery" class="mobile-nav-link font-serif text-3xl text-stone-100 hover:text-amber-200 transition-colors">03 / 攝影作品 · Gallery</a>
+      <a href="#projects" class="mobile-nav-link font-serif text-3xl text-stone-100 hover:text-amber-200 transition-colors">04 / 攝影專案 · Projects</a>
+      <a href="#contact" class="mobile-nav-link font-serif text-3xl text-stone-100 hover:text-amber-200 transition-colors">05 / 聯絡預約 · Contact</a>
+    </div>
+    <div class="pt-8 border-t border-stone-800">
+      <p class="font-mono text-xs text-stone-400 mb-2">ANSEL LIN PHOTOGRAPHY</p>
+      <p class="text-xs text-stone-500">Taipei / Tokyo · studio@ansellin-photo.com</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 01: HERO / HOME (首頁主視覺)
+       ========================================================================== -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16 px-6 md:px-12">
+    <!-- Immersive Background Image Container -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=2000&q=85" 
+        alt="Hero Photography - Solitary Fog" 
+        class="w-full h-full object-cover hero-ambient-zoom filter brightness-[0.42] contrast-[1.12]"
+      />
+      <!-- Artistic Editorial Vignette & Gradient Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b0c] via-transparent to-[#0b0b0c]/80"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(11,11,12,0.6)_100%)]"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto w-full text-center flex flex-col items-center justify-center">
+      <!-- Editorial Eyebrow Tag -->
+      <div class="reveal-item flex items-center space-x-3 mb-6 bg-[#18181b]/70 backdrop-blur-md px-4 py-1.5 border border-[#f5f2eb]/15 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-200/90"></span>
+        <span class="font-mono text-[11px] md:text-xs tracking-[0.25em] text-[#e5dfd3] uppercase">
+          FINE ART & EDITORIAL PHOTOGRAPHY
+        </span>
+      </div>
+
+      <!-- Main Headline: CAPTURING MOMENTS -->
+      <h1 class="reveal-item delay-100 font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-tight text-[#f5f2eb] leading-[0.95] mb-6">
+        CAPTURING<br>
+        <span class="italic font-normal tracking-wide text-[#e5dfd3]/95">MOMENTS</span>
+      </h1>
+
+      <!-- Chinese Subtitle & Photographer Name -->
+      <div class="reveal-item delay-200 max-w-xl mx-auto mb-10">
+        <p class="font-serif text-xl sm:text-2xl text-[#d4cebf] tracking-widest font-light mb-3">
+          光影交界處的靜默定格 · 林境
+        </p>
+        <p class="font-sans text-xs sm:text-sm text-[#a39f95] font-light leading-relaxed tracking-wider">
+          In between the transient light, silent shadows, and fleeting seconds.<br class="hidden sm:inline">
+          An artistic curation of visual narratives across the globe.
+        </p>
+      </div>
+
+      <!-- Quick Action CTAs -->
+      <div class="reveal-item delay-300 flex flex-wrap items-center justify-center gap-4">
+        <a href="#gallery" class="px-8 py-3.5 bg-[#f5f2eb] text-[#0b0b0c] font-mono text-xs tracking-[0.2em] uppercase rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 font-semibold shadow-2xl" data-cursor="EXPLORE">
+          瀏覽作品集 · VIEW GALLERY
+        </a>
+        <a href="#about" class="px-7 py-3.5 border border-[#f5f2eb]/30 hover:border-[#f5f2eb] text-[#f5f2eb] font-mono text-xs tracking-[0.2em] uppercase rounded-full hover:bg-[#f5f2eb]/10 transition-all duration-300" data-cursor="ABOUT">
+          關於藝術家 · ABOUT ARTIST
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar Indicators -->
+    <div class="absolute bottom-8 left-6 right-6 md:left-12 md:right-12 z-10 flex items-end justify-between pointer-events-none">
+      <div class="hidden sm:flex flex-col text-[11px] font-mono text-[#8e8a80] tracking-widest uppercase">
+        <span>LOCATIONS</span>
+        <span class="text-[#f5f2eb]/80">TAIPEI / TOKYO / REYKJAVIK</span>
+      </div>
+
+      <!-- Animated Scroll Down Indicator -->
+      <a href="#about" class="mx-auto sm:mx-0 pointer-events-auto flex flex-col items-center space-y-2 group" data-cursor="SCROLL">
+        <span class="font-mono text-[10px] tracking-[0.25em] text-[#8e8a80] group-hover:text-[#f5f2eb] transition-colors uppercase">
+          SCROLL TO EXPLORE
+        </span>
+        <div class="w-[1px] h-10 bg-gradient-to-b from-stone-400 to-transparent relative overflow-hidden">
+          <div class="w-full h-1/2 bg-[#f5f2eb] absolute top-0 animate-[bounce_2s_infinite]"></div>
+        </div>
+      </a>
+
+      <div class="hidden sm:flex flex-col text-right text-[11px] font-mono text-[#8e8a80] tracking-widest uppercase">
+        <span>MEDIUM</span>
+        <span class="text-[#f5f2eb]/80">35MM & MEDIUM FORMAT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EDITORIAL MANIFESTO STRIP
+       ========================================================================== -->
+  <section class="py-20 md:py-28 px-6 md:px-12 border-y border-[#f5f2eb]/8 bg-[#121214]">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="reveal-item font-mono text-[11px] tracking-[0.3em] uppercase text-amber-200/80 mb-4 block">
+        00 // PHILOSOPHY & ARTISTIC INTENT
+      </span>
+      <blockquote class="reveal-item delay-100 font-serif text-2xl sm:text-3xl md:text-4xl text-[#f5f2eb] font-light leading-relaxed tracking-wide mb-6">
+        「攝影不是複製眼前的現實，而是在稍縱即逝的光影流轉中，替靈魂尋得安放的定格。」
+      </blockquote>
+      <p class="reveal-item delay-200 font-sans text-xs md:text-sm text-[#8e8a80] tracking-widest uppercase">
+        — Photography is the quiet preservation of light, human presence, and unspoken truth.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 02: ABOUT (關於攝影師)
+       ========================================================================== -->
+  <section id="about" class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <!-- Left Column: Portrait & Badge -->
+      <div class="lg:col-span-5 reveal-item">
+        <div class="relative group">
+          <!-- Frame with minimal offset border -->
+          <div class="absolute -inset-3 border border-[#f5f2eb]/10 rounded-sm pointer-events-none group-hover:border-[#f5f2eb]/25 transition-colors duration-500"></div>
+          
+          <div class="aspect-[3/4] overflow-hidden rounded-sm bg-stone-900 shadow-2xl relative" data-cursor="ANSEL">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85" 
+              alt="Photographer Portrait Ansel Lin" 
+              class="w-full h-full object-cover filter contrast-[1.08] grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+            />
+            <!-- Dark gradient over bottom -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b0c] via-transparent to-transparent opacity-60"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-stone-200">
+              <div>
+                <p class="font-serif text-xl tracking-wider text-stone-100">林境 · Ansel Lin</p>
+                <p class="font-mono text-[10px] text-stone-400 tracking-widest uppercase">Independent Visual Artist</p>
+              </div>
+              <span class="font-mono text-xs text-amber-200/90 bg-[#0b0b0c]/80 px-2.5 py-1 rounded-full border border-stone-800">
+                TAIPEI
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gear / Specs Quick List -->
+        <div class="mt-8 p-5 bg-[#141416] border border-[#f5f2eb]/8 rounded-sm grid grid-cols-2 gap-4 text-xs font-mono">
+          <div>
+            <span class="text-[#6e6b63] block uppercase tracking-wider text-[10px]">Primary Gear</span>
+            <span class="text-[#f5f2eb]">Leica M11 & MP</span>
+          </div>
+          <div>
+            <span class="text-[#6e6b63] block uppercase tracking-wider text-[10px]">Medium Format</span>
+            <span class="text-[#f5f2eb]">Hasselblad 907X</span>
+          </div>
+          <div>
+            <span class="text-[#6e6b63] block uppercase tracking-wider text-[10px]">Preferred Lens</span>
+            <span class="text-[#f5f2eb]">35mm / 50mm Prime</span>
+          </div>
+          <div>
+            <span class="text-[#6e6b63] block uppercase tracking-wider text-[10px]">Film Stocks</span>
+            <span class="text-[#f5f2eb]">Tri-X 400 · Portra 800</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Biography & Principles -->
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <div class="reveal-item">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="font-mono text-xs text-amber-200/90 tracking-widest uppercase">02 // ABOUT THE ARTIST</span>
+            <div class="h-[1px] w-12 bg-stone-700"></div>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-light text-[#f5f2eb] tracking-wide mb-6 leading-tight">
+            凝結時間的呼吸，<br>
+            <span class="italic text-[#d4cebf]">讓照片替無法言說的瞬間發聲。</span>
+          </h2>
+        </div>
+
+        <div class="reveal-item delay-100 space-y-4 text-stone-300 font-sans text-sm sm:text-base leading-relaxed font-light mb-10">
+          <p>
+            Ansel Lin（林境）是一位長駐台北與東京的獨立攝影師與視覺敘事者。創作跨越人像肖像、建築幾何、城市街頭與人文紀實，曾為多家國際獨立刊物拍攝封面特輯與藝術專題。
+          </p>
+          <p>
+            在數位影像氾濫的時代，他堅持回歸光影本質。偏好利用晨昏微光與自然漫射光源，以簡練留白的構圖與黑白暗調層次，探討個體在空間中的孤獨與存在感。
+          </p>
+        </div>
+
+        <!-- 3 Core Philosophy Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+          <div class="reveal-item delay-200 p-4 bg-[#141416] border border-[#f5f2eb]/8 rounded-sm">
+            <span class="font-mono text-amber-200/80 text-xs block mb-1">01 / LIGHT</span>
+            <h4 class="font-serif text-lg text-stone-100 mb-1">自然光線</h4>
+            <p class="text-xs text-stone-400 font-sans leading-normal">
+              順應天光脈動，以純粹陰翳雕塑人物情緒與形體輪廓。
+            </p>
+          </div>
+          <div class="reveal-item delay-300 p-4 bg-[#141416] border border-[#f5f2eb]/8 rounded-sm">
+            <span class="font-mono text-amber-200/80 text-xs block mb-1">02 / SILENCE</span>
+            <h4 class="font-serif text-lg text-stone-100 mb-1">空間留白</h4>
+            <p class="text-xs text-stone-400 font-sans leading-normal">
+              適度抽離多餘色彩與干擾，讓畫面的沉默成為最深沉的力量。
+            </p>
+          </div>
+          <div class="reveal-item delay-400 p-4 bg-[#141416] border border-[#f5f2eb]/8 rounded-sm">
+            <span class="font-mono text-amber-200/80 text-xs block mb-1">03 / STORY</span>
+            <h4 class="font-serif text-lg text-stone-100 mb-1">編輯敘事</h4>
+            <p class="text-xs text-stone-400 font-sans leading-normal">
+              以雜誌篇章架構組織畫面，每張照片皆是長篇故事的引言。
+            </p>
+          </div>
+        </div>
+
+        <!-- Selected Exhibitions & Honors -->
+        <div class="reveal-item delay-500 pt-6 border-t border-[#f5f2eb]/10">
+          <h4 class="font-mono text-xs tracking-widest text-[#8e8a80] uppercase mb-4">SELECTED EXHIBITIONS & RECOGNITION</h4>
+          <ul class="space-y-2 text-xs font-mono text-stone-300">
+            <li class="flex items-center justify-between">
+              <span>2025 · 《Whispers of Grey》 個展 · 台北文化中心</span>
+              <span class="text-stone-500">Solo Exhibition</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>2024 · Tokyo International Foto Awards (TIFA) · 金獎</span>
+              <span class="text-stone-500">Gold Winner</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>2023 · PX3 Prix de la Photographie Paris · 人像類銀獎</span>
+              <span class="text-stone-500">Silver Prize</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>刊載合作 · CEREAL, KINFOLK, Vogue Taiwan, Monocle</span>
+              <span class="text-stone-500">Editorial</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 03: GALLERY (攝影作品展示區)
+       ========================================================================== -->
+  <section id="gallery" class="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#f5f2eb]/8">
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div class="reveal-item">
+        <span class="font-mono text-xs text-amber-200/90 tracking-widest uppercase mb-2 block">
+          03 // CURATED WORKS
+        </span>
+        <h2 class="font-serif text-4xl sm:text-6xl font-light text-[#f5f2eb] tracking-wide">
+          攝影作品 <span class="text-stone-400 font-sans text-xl sm:text-2xl font-light block sm:inline sm:ml-3">Gallery</span>
+        </h2>
+        <p class="font-sans text-xs sm:text-sm text-[#8e8a80] mt-2 font-light">
+          探索人像、風景、街頭與生活紀實的光影縮影。點擊任意照片以燈箱放大觀賞拍攝參數與背景故事。
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="reveal-item delay-100 flex flex-wrap gap-2 mt-6 md:mt-0">
+        <button class="filter-btn active" data-filter="all">全部 ALL</button>
+        <button class="filter-btn" data-filter="portrait">人像 PORTRAIT</button>
+        <button class="filter-btn" data-filter="landscape">風景 LANDSCAPE</button>
+        <button class="filter-btn" data-filter="street">街頭 STREET</button>
+        <button class="filter-btn" data-filter="documentary">生活紀實 DOCUMENTARY</button>
+      </div>
+    </div>
+
+    <!-- Editorial Dynamic Asymmetrical Gallery Grid -->
+    <div id="gallery-grid" class="grid grid-cols-12 gap-5 md:gap-7">
+      <!-- Dynamically generated via JS from GALLERY_DATA -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 04: PROJECTS (攝影專案特寫)
+       ========================================================================== -->
+  <section id="projects" class="py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#f5f2eb]/8">
+    <!-- Section Header -->
+    <div class="max-w-3xl mb-16 reveal-item">
+      <span class="font-mono text-xs text-amber-200/90 tracking-widest uppercase mb-2 block">
+        04 // EDITORIAL SERIES
+      </span>
+      <h2 class="font-serif text-4xl sm:text-6xl font-light text-[#f5f2eb] tracking-wide mb-3">
+        攝影專案 <span class="text-stone-400 font-sans text-xl sm:text-2xl font-light block sm:inline sm:ml-3">Projects</span>
+      </h2>
+      <p class="font-sans text-xs sm:text-sm text-[#8e8a80] leading-relaxed font-light">
+        深入探索四組具備完整敘事結構的主題攝影企劃。每項專案皆有特定拍攝命題、創作初衷與獨家圖輯。
+      </p>
+    </div>
+
+    <!-- Projects List Container -->
+    <div id="projects-container">
+      <!-- Dynamically generated via JS from PROJECTS_DATA -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 05: CREATIVE PROCESS & CLIENTS STRIP
+       ========================================================================== -->
+  <section class="py-24 px-6 md:px-12 bg-[#121214] border-y border-[#f5f2eb]/8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-item">
+        <span class="font-mono text-xs text-amber-200/90 tracking-widest uppercase mb-2 block">
+          METHODOLOGY
+        </span>
+        <h3 class="font-serif text-3xl sm:text-4xl text-[#f5f2eb] font-light">
+          創作流程與典藏工藝
+        </h3>
+      </div>
+
+      <!-- 4 Steps -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="reveal-item p-6 border-l border-[#f5f2eb]/15">
+          <span class="font-mono text-xs text-stone-500 block mb-2">PHASE 01</span>
+          <h4 class="font-serif text-xl text-stone-100 mb-2">靈感對話 Dialogue</h4>
+          <p class="text-xs text-stone-400 font-sans leading-relaxed">
+            深入溝通拍攝對象的氣質特點、企劃情緒板（Moodboard）與影像調性定位。
+          </p>
+        </div>
+        <div class="reveal-item delay-100 p-6 border-l border-[#f5f2eb]/15">
+          <span class="font-mono text-xs text-stone-500 block mb-2">PHASE 02</span>
+          <h4 class="font-serif text-xl text-stone-100 mb-2">場勘與光影 Scouting</h4>
+          <p class="text-xs text-stone-400 font-sans leading-relaxed">
+            預測自然光線移動軌跡、空間架構與色彩搭配，建立拍攝日精準的時間表。
+          </p>
+        </div>
+        <div class="reveal-item delay-200 p-6 border-l border-[#f5f2eb]/15">
+          <span class="font-mono text-xs text-stone-500 block mb-2">PHASE 03</span>
+          <h4 class="font-serif text-xl text-stone-100 mb-2">沈浸拍攝 The Session</h4>
+          <p class="text-xs text-stone-400 font-sans leading-relaxed">
+            營造放鬆且具默契的快門節奏，專注於不刻意擺拍下的真實神情與呼吸感。
+          </p>
+        </div>
+        <div class="reveal-item delay-300 p-6 border-l border-[#f5f2eb]/15">
+          <span class="font-mono text-xs text-stone-500 block mb-2">PHASE 04</span>
+          <h4 class="font-serif text-xl text-stone-100 mb-2">編輯與微噴 Archival</h4>
+          <p class="text-xs text-stone-400 font-sans leading-relaxed">
+            嚴選色溫灰階調色，並提供符合博物館級無酸純棉藝術紙之微噴典藏輸出。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 06: CONTACT (聯絡方式與委託預約)
+       ========================================================================== -->
+  <section id="contact" class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <!-- Left Column: Contact Details & Availability -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div>
+          <div class="reveal-item">
+            <span class="font-mono text-xs text-amber-200/90 tracking-widest uppercase mb-2 block">
+              05 // GET IN TOUCH
+            </span>
+            <h2 class="font-serif text-4xl sm:text-6xl font-light text-[#f5f2eb] tracking-wide mb-4">
+              預約與合作 <span class="text-stone-400 font-sans text-xl sm:text-2xl font-light block sm:inline sm:ml-2">Contact</span>
+            </h2>
+            <p class="font-sans text-xs sm:text-sm text-stone-400 font-light leading-relaxed mb-8">
+              我們樂於承接全球商業雜誌、人像寫真特寫、建築空間紀錄與藝術典藏委託。請填寫詢問表單或直接透過電子信箱聯繫。
+            </p>
+          </div>
+
+          <!-- Availability Card -->
+          <div class="reveal-item delay-100 p-5 bg-[#141416] border border-[#f5f2eb]/10 rounded-sm mb-8">
+            <div class="flex items-center space-x-2 text-xs font-mono text-stone-300 mb-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 pulse-indicator"></span>
+              <span class="tracking-wider uppercase font-semibold text-emerald-400">CURRENT STATUS</span>
+            </div>
+            <p class="font-serif text-lg text-stone-200">
+              Accepting Commissions for Q3/Q4 2026
+            </p>
+            <p class="text-xs text-stone-500 font-sans mt-1">
+              現正開放 2026 年台北、東京及海外專案預約
+            </p>
+          </div>
+
+          <!-- Direct Info -->
+          <div class="reveal-item delay-200 space-y-5 text-sm font-mono text-stone-300">
+            <div>
+              <span class="text-xs text-stone-500 block uppercase tracking-wider mb-1">Direct Inquiries</span>
+              <div class="flex items-center space-x-3">
+                <span class="text-[#f5f2eb] font-mono">studio@ansellin-photo.com</span>
+                <button id="copy-email-btn" class="text-xs text-amber-200/80 hover:text-amber-200 underline uppercase tracking-wider" data-cursor="COPY">
+                  [複製信箱]
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <span class="text-xs text-stone-500 block uppercase tracking-wider mb-1">Studio Location</span>
+              <p class="text-stone-300">Daan District, Taipei / Shibuya, Tokyo</p>
+            </div>
+
+            <div>
+              <span class="text-xs text-stone-500 block uppercase tracking-wider mb-1">Social & Publications</span>
+              <div class="flex flex-wrap gap-4 text-xs text-stone-400 pt-1">
+                <a href="#" class="hover:text-[#f5f2eb] transition-colors underline underline-offset-4">Instagram @ansellin.photo</a>
+                <a href="#" class="hover:text-[#f5f2eb] transition-colors underline underline-offset-4">Behance</a>
+                <a href="#" class="hover:text-[#f5f2eb] transition-colors underline underline-offset-4">Vogue PhotoVogue</a>
+                <a href="#" class="hover:text-[#f5f2eb] transition-colors underline underline-offset-4">500px</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 mt-8 border-t border-stone-800 text-xs font-mono text-stone-500 hidden lg:block">
+          RESPONSE TIME: WITHIN 24 HOURS
+        </div>
+      </div>
+
+      <!-- Right Column: Minimalist Editorial Inquiry Form -->
+      <div class="lg:col-span-7 bg-[#141416] p-8 md:p-12 border border-[#f5f2eb]/8 rounded-sm reveal-item">
+        <h3 class="font-serif text-2xl text-[#f5f2eb] font-light mb-6">
+          傳送委託諮詢 · Send an Inquiry
+        </h3>
+
+        <form id="contact-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block font-mono text-xs uppercase tracking-wider text-stone-400 mb-1">
+                您的稱呼 · Your Name *
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                required 
+                placeholder="例如：陳先生 / Alice" 
+                class="editorial-input"
+              />
+            </div>
+            <div>
+              <label for="email" class="block font-mono text-xs uppercase tracking-wider text-stone-400 mb-1">
+                電子信箱 · Email Address *
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                required 
+                placeholder="name@domain.com" 
+                class="editorial-input"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="service-type" class="block font-mono text-xs uppercase tracking-wider text-stone-400 mb-1">
+                拍攝類型 · Project Type *
+              </label>
+              <select id="service-type" required class="editorial-select w-full rounded-sm">
+                <option value="" disabled selected>請選擇項目分類...</option>
+                <option value="portrait">個人/品牌人像寫真 (Portrait Session)</option>
+                <option value="editorial">商業雜誌與形象特輯 (Commercial Editorial)</option>
+                <option value="architecture">建築與室內空間紀實 (Architecture & Space)</option>
+                <option value="elopement">婚紗與情感紀實 (Intimate Elopement)</option>
+                <option value="fineart">藝術典藏相紙輸出 (Fine Art Print Purchase)</option>
+              </select>
+            </div>
+            <div>
+              <label for="timeframe" class="block font-mono text-xs uppercase tracking-wider text-stone-400 mb-1">
+                預計拍攝日期 / 地點 · Date & City
+              </label>
+              <input 
+                type="text" 
+                id="timeframe" 
+                placeholder="例如：2026 年 11 月 · 台北" 
+                class="editorial-input"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block font-mono text-xs uppercase tracking-wider text-stone-400 mb-1">
+              專案構想與背景故事 · Project Vision *
+            </label>
+            <textarea 
+              id="message" 
+              rows="4" 
+              required 
+              placeholder="請簡述您的期望拍攝風格、故事靈感或任何特定需求..." 
+              class="editorial-input resize-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-2 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-stone-500">
+              * 所有委託均嚴格保密
+            </span>
+            <button 
+              type="submit" 
+              class="px-8 py-3.5 bg-[#f5f2eb] text-[#0b0b0c] font-mono text-xs tracking-[0.2em] uppercase rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 font-semibold"
+              data-cursor="SUBMIT"
+            >
+              傳送詢問 · TRANSMIT
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="pt-20 pb-12 px-6 md:px-12 border-t border-[#f5f2eb]/8 bg-[#0b0b0c]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="text-center md:text-left">
+        <span class="font-serif text-2xl tracking-[0.2em] text-[#f5f2eb] block">ANSEL LIN</span>
+        <span class="font-mono text-[10px] text-stone-500 tracking-widest uppercase">
+          FINE ART & EDITORIAL PHOTOGRAPHY · EST. 2018
+        </span>
+      </div>
+
+      <div class="font-mono text-xs text-stone-500 text-center">
+        © 2026 ANSEL LIN PHOTOGRAPHY. ALL RIGHTS RESERVED.
+      </div>
+
+      <div class="flex items-center space-x-6">
+        <button id="back-to-top" class="font-mono text-xs text-stone-400 hover:text-stone-100 flex items-center gap-2 uppercase tracking-widest transition-colors" data-cursor="TOP">
+          <span>TOP</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 01: LIGHTBOX (照片燈箱放大檢視)
+       ========================================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <!-- Top Header -->
+    <div class="lightbox-header">
+      <div class="flex items-center space-x-4">
+        <span id="lightbox-counter" class="font-mono text-xs text-stone-400 tracking-widest">01 / 16</span>
+        <span class="text-stone-700">|</span>
+        <span id="lightbox-category" class="font-mono text-xs text-amber-200/90 tracking-wider uppercase">PORTRAIT</span>
+      </div>
+
+      <button id="lightbox-close" class="p-2 text-stone-400 hover:text-white transition-colors" aria-label="Close Lightbox" data-cursor="CLOSE">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Main Lightbox Image Viewport & Controls -->
+    <div class="lightbox-content">
+      <!-- Previous Button -->
+      <button id="lightbox-prev" class="lightbox-nav-btn prev" aria-label="Previous Photo" data-cursor="PREV">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <!-- Center Image -->
+      <div class="lightbox-image-wrap">
+        <img id="lightbox-img" src="" alt="Enlarged Photograph" class="rounded-sm" />
+      </div>
+
+      <!-- Next Button -->
+      <button id="lightbox-next" class="lightbox-nav-btn next" aria-label="Next Photo" data-cursor="NEXT">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Bottom Lightbox Editorial Info & EXIF Specs -->
+    <div class="lightbox-footer">
+      <div class="max-w-2xl">
+        <div class="flex items-baseline space-x-3 mb-1">
+          <h4 id="lightbox-title" class="font-serif text-2xl text-stone-100 font-light"></h4>
+          <span id="lightbox-location" class="font-mono text-xs text-stone-400"></span>
+        </div>
+        <p id="lightbox-story" class="text-xs sm:text-sm text-stone-300 font-sans font-light leading-relaxed"></p>
+      </div>
+
+      <!-- Camera EXIF Metadata Specs -->
+      <div class="flex flex-wrap items-center gap-4 text-xs font-mono bg-stone-900/90 px-4 py-2 rounded-sm border border-stone-800">
+        <div>
+          <span class="text-stone-500 block text-[9px] uppercase">Camera</span>
+          <span id="lightbox-camera" class="text-stone-200"></span>
+        </div>
+        <div class="hidden sm:block">
+          <span class="text-stone-500 block text-[9px] uppercase">Lens</span>
+          <span id="lightbox-lens" class="text-stone-200"></span>
+        </div>
+        <div>
+          <span class="text-stone-500 block text-[9px] uppercase">Exposure</span>
+          <span id="lightbox-settings" class="text-amber-200/90"></span>
+        </div>
+        <div class="hidden md:block">
+          <span class="text-stone-500 block text-[9px] uppercase">Focal</span>
+          <span id="lightbox-focal" class="text-stone-200"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 02: SERIES MODAL (專案完整系列圖輯)
+       ========================================================================== -->
+  <div id="series-modal" class="series-modal" role="dialog" aria-modal="true" aria-label="Project Series">
+    <div class="max-w-6xl mx-auto min-h-screen py-16 px-6 md:px-12 flex flex-col justify-between">
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between pb-8 border-b border-stone-800">
+        <div>
+          <span id="series-theme" class="font-mono text-xs text-amber-200/90 tracking-widest uppercase block mb-1"></span>
+          <h2 id="series-title" class="font-serif text-3xl sm:text-5xl text-stone-100 font-light"></h2>
+        </div>
+
+        <button id="series-close" class="p-3 text-stone-400 hover:text-white transition-colors" aria-label="Close Series" data-cursor="CLOSE">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Series Overview -->
+      <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-b border-stone-800/60 mb-12">
+        <div class="md:col-span-8">
+          <p id="series-intro" class="text-stone-300 font-sans text-base leading-relaxed font-light"></p>
+        </div>
+        <div class="md:col-span-4 font-mono text-xs space-y-2 text-stone-400 bg-stone-900/60 p-4 border border-stone-800 rounded-sm">
+          <div><span class="text-stone-500">YEAR:</span> <span id="series-year" class="text-stone-200"></span></div>
+          <div><span class="text-stone-500">EXHIBITION / CLIENT:</span> <span id="series-client" class="text-stone-200"></span></div>
+          <div class="text-[10px] text-stone-500 pt-2 border-t border-stone-800">* 點擊任意圖片可進入燈箱放大檢視</div>
+        </div>
+      </div>
+
+      <!-- Series Photos Grid -->
+      <div id="series-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Bottom Close CTA -->
+      <div class="text-center pt-8 border-t border-stone-800">
+        <button onclick="document.getElementById('series-modal').classList.remove('active'); document.body.style.overflow='';" class="px-8 py-3 bg-stone-800 hover:bg-stone-700 text-stone-200 font-mono text-xs uppercase tracking-widest rounded-full transition-colors">
+          關閉專案圖輯 · CLOSE SERIES
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notice -->
+  <div id="toast-notice" class="toast-notice">
+    <div class="flex items-center space-x-3">
+      <span class="w-2 h-2 rounded-full bg-amber-200"></span>
+      <p id="toast-message" class="font-sans text-xs sm:text-sm text-stone-100"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/gallery-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
